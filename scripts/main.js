@@ -6,17 +6,14 @@ $(function() {
         rand = Math.round(rand);
         return rand;
       }
-      // if (true) {
-      //   term.echo('Вы пришли слишком рано. Попробуйте позже');
-      //   return;
-      // }
+
       switch (command) {
         case 'help':
           term.echo(
               'Доступные команды:\n' +
               '  getbio          прочитать часть истории\n'+
               '  getcake         посмотреть на тортик\n' +
-              '  test            пройти тестирование для получения повышенных прав\n'
+              '  test            пройти тестирование\n'
           );
           break;
         case 'getbio':
@@ -92,7 +89,7 @@ $(function() {
               } else {
                   term.echo('Неправильно!');
                   if (++attempts > 3) {
-                      term.echo('Превышено количество попыток входа. Попробуйте снова.\n');
+                      term.echo('Превышено количество неправильных ответов. Попробуйте снова.\n');
                       term.pop();
                       return;
                   }
